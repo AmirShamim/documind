@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pypdf
+sentence-transformers
+faiss-cpu
+numpy
+python-multipart
+aiofiles
+requests
+# optional (LLM providers)
+# openai
