@@ -4,11 +4,11 @@ import GlassCard from './GlassCard';
 export default function ProjectDocs() {
   return (
     <div className="space-y-8">
-      <GlassCard title={PROJECT_CONFIG.name} subtitle="Project Overview">
+      <GlassCard id="project-overview" title={PROJECT_CONFIG.name} subtitle="Project Overview">
         <p className="mb-4">{PROJECT_CONFIG.elevatorPitch}</p>
       </GlassCard>
 
-      <GlassCard title="Project Structure" subtitle="Directory Overview">
+      <GlassCard id="project-structure" title="Project Structure" subtitle="Directory Overview">
         <div className="space-y-2">
           {Object.entries(PROJECT_CONFIG.directories).map(([key, description]) => (
             <div key={key} className="flex items-start">
@@ -19,7 +19,7 @@ export default function ProjectDocs() {
         </div>
       </GlassCard>
 
-      <GlassCard title="RAG Modules" subtitle="Core Components">
+      <GlassCard id="rag-modules" title="RAG Modules" subtitle="Core Components">
         <div className="space-y-4">
           {Object.entries(PROJECT_CONFIG.ragModules).map(([key, module]) => (
             <div key={key} className="border-l-2 border-yellow-400 pl-4">
@@ -30,7 +30,7 @@ export default function ProjectDocs() {
         </div>
       </GlassCard>
 
-      <GlassCard title="Runtime Flow" subtitle="How the System Works">
+      <GlassCard id="runtime-flow" title="Runtime Flow" subtitle="How the System Works">
         <ol className="space-y-2">
           {PROJECT_CONFIG.runtimeFlow.map((step, index) => (
             <li key={index} className="flex items-start">
@@ -41,7 +41,7 @@ export default function ProjectDocs() {
         </ol>
       </GlassCard>
 
-      <GlassCard title="Backend Setup" subtitle="API Configuration">
+      <GlassCard id="backend-setup" title="Backend Setup" subtitle="API Configuration">
         <div className="space-y-2 text-sm">
           <div><strong>Location:</strong> {PROJECT_CONFIG.backendSetup.location}</div>
           <div><strong>Endpoint:</strong> {PROJECT_CONFIG.backendSetup.endpoint}</div>
@@ -49,7 +49,7 @@ export default function ProjectDocs() {
         </div>
       </GlassCard>
 
-      <GlassCard title="Next Steps" subtitle="Development Roadmap">
+      <GlassCard id="next-steps" title="Next Steps" subtitle="Development Roadmap">
         <ol className="space-y-2">
           {PROJECT_CONFIG.nextSteps.map((step, index) => (
             <li key={index} className="flex items-start">
@@ -60,7 +60,7 @@ export default function ProjectDocs() {
         </ol>
       </GlassCard>
 
-      <GlassCard title="Hackathon Tips" subtitle="Best Practices">
+      <GlassCard id="hackathon-tips" title="Hackathon Tips" subtitle="Best Practices">
         <ul className="space-y-2">
           {PROJECT_CONFIG.hackathonTips.map((tip, index) => (
             <li key={index} className="flex items-start">

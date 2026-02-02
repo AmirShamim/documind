@@ -1,12 +1,12 @@
 import { STYLING_CONFIG } from '../config/stylingConfig.js';
 
-export default function GlassCard({ title, subtitle, children, avatar, className = '' }) {
+export default function GlassCard({ title, subtitle, children, avatar, className = '', id }) {
   // Use styling config for consistent class names
   const glassClass = STYLING_CONFIG.globalUtilities.find(util => util.class === '.glass')?.class?.replace('.', '') || 'glass';
   const borderClass = STYLING_CONFIG.globalUtilities.find(util => util.class === '.glass-border')?.class?.replace('.', '') || 'glass-border';
 
   return (
-    <div className={`${borderClass} ${className}`}>
+    <div id={id} className={`${borderClass} ${className}`}>
       <div className={`${glassClass} p-6 md:p-8 rounded-[18px] relative`}>
         <div className="flex items-start justify-between">
           <div>

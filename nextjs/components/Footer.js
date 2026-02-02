@@ -42,7 +42,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; 2024 DocuMind. Built with ❤️ for the research community.</p>
+          <p>&copy; 2026 DocuMind. Built with ❤️ for the research community.</p>
         </div>
       </div>
     </footer>

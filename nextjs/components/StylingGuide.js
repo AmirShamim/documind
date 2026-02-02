@@ -4,7 +4,7 @@ import GlassCard from './GlassCard';
 export default function StylingGuide() {
   return (
     <div className="space-y-8">
-      <GlassCard title="Styling Configuration" subtitle="Glassmorphism Theme">
+      <GlassCard id="styling-configuration" title="Styling Configuration" subtitle="Glassmorphism Theme">
         <div className="space-y-4">
           <div>
             <h4 className="font-semibold mb-2">Theme: {STYLING_CONFIG.theme}</h4>
@@ -37,7 +37,7 @@ export default function StylingGuide() {
         </div>
       </GlassCard>
 
-      <GlassCard title="Performance Tips" subtitle="From Configuration">
+      <GlassCard id="performance-tips" title="Performance Tips" subtitle="From Configuration">
         <ul className="space-y-2 text-sm">
           {STYLING_CONFIG.polishAndPerformanceTips.map((tip, index) => (
             <li key={index} className="flex items-start">

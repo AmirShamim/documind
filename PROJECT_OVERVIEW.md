@@ -1,39 +1,273 @@
-# DocuMind — AI-Powered Document Assistant
+# DocuMind — Full-Stack AI Document Assistant
 
-## 🎯 Executive Summary
+## 🎯 Overview
 
-**DocuMind** is a revolutionary AI-powered document assistant that transforms how students, professionals, and researchers interact with PDF documents. Instead of spending hours manually reading through lengthy documents, users can now have natural, conversational interactions with their files. Upload any PDF and ask questions in plain English — DocuMind provides instant, accurate answers with source citations.
+DocuMind is a complete full-stack application that enables users to upload PDF documents and ask natural language questions to receive AI-powered answers with source citations. Built with modern web technologies and cutting-edge AI, it implements a true Retrieval-Augmented Generation (RAG) pipeline for accurate, context-aware responses.
 
-**Elevator Pitch:** "Students and professionals waste hours reading documents. DocuMind turns any PDF into a conversational AI assistant. Upload → Ask → Learn in seconds."
-
-## 🏗️ Architecture Overview
-
-DocuMind is built on a modern, scalable architecture combining cutting-edge AI technologies with a responsive web interface.
-
-### Core Components
-
-**Frontend (Next.js + React + Tailwind CSS)**
+**Key Features:**
+- PDF upload and processing
+- Persistent document storage with vector embeddings
+- Natural language question answering
+- Source citation and context retrieval
 - Responsive web interface with glassmorphism design
-- Real-time file upload and question submission
-- Interactive demo and documentation pages
-- Modular component architecture following DRY principles
+- Blog system for content management
+- Modular, scalable architecture
 
-**Backend (Python + FastAPI + RAG Pipeline)**
-- Document processing and text extraction
-- Vector embeddings generation using Sentence Transformers
-- FAISS-powered semantic search and similarity matching
-- OpenAI GPT integration for natural language answer generation
+## 🏗️ Architecture
 
-**AI/ML Pipeline**
-- **Retrieval-Augmented Generation (RAG)**: Combines document retrieval with AI generation
-- **Vector Embeddings**: Transforms text into mathematical vectors for semantic understanding
-- **FAISS Vector Database**: High-performance similarity search and clustering
-- **Natural Language Processing**: Advanced text processing and question understanding
+### Frontend (Next.js)
+- **Framework:** Next.js 13+ with Pages Router
+- **Styling:** Tailwind CSS with custom glassmorphism effects
+- **Components:** Modular React components (Layout, Navigation, GlassCard, etc.)
+- **State Management:** React hooks with localStorage persistence
+- **API Integration:** Fetch-based client for backend communication
+
+### Backend (FastAPI + RAG Pipeline)
+- **Framework:** FastAPI with async endpoints
+- **Document Processing:** PDF text extraction and chunking
+- **Vector Storage:** ChromaDB for persistent embeddings
+- **AI Integration:** OpenAI GPT for answer generation
+- **Background Tasks:** Async ingestion and processing
+
+### AI/ML Pipeline
+- **Text Extraction:** PyPDF for PDF parsing
+- **Chunking:** Recursive character text splitting
+- **Embeddings:** Sentence Transformers for vector generation
+- **Vector Search:** ChromaDB similarity search
+- **LLM Integration:** OpenAI ChatGPT for answer synthesis
 
 ## 📁 Project Structure
 
 ```
 documind/
+├── PROJECT_OVERVIEW.md          # This file
+├── requirements.txt             # Python dependencies
+├── backend/
+│   ├── app.py                   # FastAPI application
+│   └── README.md                # Backend setup instructions
+├── nextjs/
+│   ├── package.json             # Node.js dependencies
+│   ├── tailwind.config.js       # Tailwind configuration
+│   ├── postcss.config.js        # PostCSS configuration
+│   ├── next.config.js           # Next.js configuration
+│   ├── pages/
+│   │   ├── _app.js              # App wrapper
+│   │   ├── index.js             # Home page
+│   │   ├── about.js             # About page
+│   │   ├── features.js          # Features page
+│   │   ├── how-it-works.js      # How it works page
+│   │   ├── demo.js              # Demo page
+│   │   ├── docs.js              # Document upload/query page
+│   │   ├── contact.js           # Contact page
+│   │   ├── blog/
+│   │   │   ├── index.js         # Blog listing
+│   │   │   ├── create.js        # Create blog post
+│   │   │   ├── [id].js          # View blog post
+│   │   │   └── edit/[id].js     # Edit blog post
+│   │   └── api/
+│   │       └── project.js       # API route example
+│   ├── components/
+│   │   ├── Layout.js            # Main layout wrapper
+│   │   ├── Navigation.js        # Navigation component
+│   │   ├── Header.js            # Header component
+│   │   ├── HomePage.js          # Home page content
+│   │   ├── GlassCard.js         # Glassmorphism card
+│   │   ├── Footer.js            # Footer component
+│   │   ├── ProjectDocs.js       # Project documentation
+│   │   ├── StylingGuide.js      # Styling guide
+│   │   └── BlogPost.js          # Blog post component
+│   ├── utils/
+│   │   ├── blogService.js       # Blog CRUD service
+│   │   └── docService.js        # Document upload/query service
+│   ├── styles/
+│   │   └── globals.css          # Global styles
+│   ├── config/
+│   │   ├── stylingConfig.js     # Styling configuration
+│   │   └── sampleData.js        # Sample data
+│   └── public/                  # Static assets
+├── rag/
+│   ├── loader.py                # PDF loading utilities
+│   ├── chunker.py               # Text chunking utilities
+│   ├── embedder.py              # Embedding generation
+│   ├── vectordb.py              # Vector database operations
+│   ├── qa.py                    # Question answering logic
+│   ├── ingest.py                # Document ingestion pipeline
+│   └── query.py                 # Query processing pipeline
+└── uploads/                     # Uploaded files directory
+```
+
+## 🚀 Setup Instructions
+
+### Prerequisites
+- Node.js 18+
+- Python 3.8+
+- OpenAI API key
+
+### Backend Setup
+```bash
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Set environment variables
+export OPENAI_API_KEY="your-openai-api-key"
+
+# Start the backend server
+uvicorn backend.app:app --reload --port 8000
+```
+
+### Frontend Setup
+```bash
+cd nextjs
+
+# Install dependencies
+npm install
+
+# Set environment variables (optional, defaults to localhost:8000)
+echo "NEXT_PUBLIC_API_URL=http://localhost:8000" > .env.local
+
+# Start development server
+npm run dev
+```
+
+### Environment Variables
+```bash
+# Backend
+OPENAI_API_KEY=sk-...
+
+# Frontend (optional)
+NEXT_PUBLIC_API_URL=http://localhost:8000
+```
+
+## 📖 Usage
+
+### Document Upload and Query
+1. Navigate to `/docs` in the web interface
+2. Upload a PDF file using the upload form
+3. Wait for ingestion to complete (background process)
+4. Ask questions in natural language
+5. Receive AI-generated answers with source citations
+
+### Blog Management
+1. Navigate to `/blog` to view all posts
+2. Use `/blog/create` to add new posts
+3. Edit existing posts via `/blog/edit/[id]`
+4. Posts are stored in localStorage (can be migrated to backend)
+
+## 🔌 API Endpoints
+
+### Backend Endpoints
+
+#### Health Check
+- **GET** `/health`
+- Returns: `{"status": "ok"}`
+
+#### Document Upload
+- **POST** `/upload`
+- Body: `multipart/form-data` with `file` field
+- Returns: `{"doc_id": "uuid", "filename": "file.pdf"}`
+- Triggers background ingestion
+
+#### Document Query
+- **POST** `/query`
+- Body: `form-data` with `doc_id` and `question`
+- Returns: `{"answer": "AI response", "sources": [...]}`
+
+### Frontend Services
+
+#### Blog Service (`utils/blogService.js`)
+```javascript
+// CRUD operations for blog posts
+listBlogs()      // Get all posts
+getBlog(id)      // Get single post
+createBlog(post) // Create new post
+updateBlog(id, updates) // Update post
+deleteBlog(id)   // Delete post
+```
+
+#### Document Service (`utils/docService.js`)
+```javascript
+// Document operations
+uploadPdf(file)     // Upload PDF, returns doc_id
+queryDoc(doc_id, question) // Query document, returns answer
+```
+
+## 🎨 Design System
+
+### Color Palette
+- Primary: Yellow (#FACC15)
+- Background: Dark gray (#1F2937)
+- Cards: Semi-transparent with blur effects
+- Text: Light gray (#F3F4F6)
+
+### Typography
+- Font: System fonts with fallbacks
+- Headings: Bold, large sizes
+- Body: Regular weight, readable contrast
+
+### Components
+- **GlassCard**: Semi-transparent cards with blur
+- **Layout**: Consistent header/footer wrapper
+- **Navigation**: Responsive nav with active states
+- **Forms**: Styled inputs and buttons
+
+## 🔧 Technical Details
+
+### RAG Pipeline
+1. **Ingestion**: PDF → Text → Chunks → Embeddings → Vector DB
+2. **Query**: Question → Embedding → Similarity Search → Context → LLM → Answer
+
+### Vector Database
+- **ChromaDB**: Persistent storage for document embeddings
+- **Collections**: Each document gets its own collection by `doc_id`
+- **Similarity**: Cosine similarity for retrieval
+
+### Security Considerations
+- File upload validation (PDF only)
+- Input sanitization
+- CORS configuration
+- API rate limiting (not implemented yet)
+
+## 🛣️ Future Roadmap
+
+### High Priority
+- [ ] User authentication and authorization
+- [ ] Database persistence (PostgreSQL/MongoDB)
+- [ ] File storage (AWS S3/Azure Blob)
+- [ ] Background job queue (Celery/RQ)
+- [ ] API documentation (Swagger/OpenAPI)
+
+### Medium Priority
+- [ ] Multi-document support
+- [ ] Chat history and conversations
+- [ ] Document sharing and collaboration
+- [ ] Advanced search filters
+- [ ] Export answers and citations
+
+### Low Priority
+- [ ] Mobile app (React Native)
+- [ ] Multi-language support
+- [ ] Voice input/output
+- [ ] Integration with other document formats
+- [ ] Analytics and usage tracking
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make changes with tests
+4. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 📞 Contact
+
+For questions or support, please use the contact form at `/contact` or create an issue in the repository.
+
+---
+
+**DocuMind** - Transforming document interaction through AI-powered conversation.
 ├── PROJECT_OVERVIEW.md          # Comprehensive project documentation
 ├── requirements.txt             # Python dependencies
 ├── .gitignore                   # Git ignore rules

@@ -7,5 +7,9 @@ numpy
 python-multipart
 aiofiles
 requests
+# LangChain + vector store dependencies
+langchain
+chromadb
+openai
 # optional (LLM providers)
 # openai
