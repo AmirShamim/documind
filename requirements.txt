@@ -1,5 +1,5 @@
 fastapi
-uvicorn
+uvicorn[standard]
 pypdf
 sentence-transformers
 faiss-cpu
@@ -9,7 +9,9 @@ aiofiles
 requests
 # LangChain + vector store dependencies
 langchain
+langchain-community
+langchain-openai
 chromadb
 openai
-# optional (LLM providers)
-# openai
+# deployment
+python-dotenv

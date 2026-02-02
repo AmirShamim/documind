@@ -1,0 +1,30 @@
+{
+  "doc_id": "2fcd103b5720469480be2598b1d51b92",
+  "num_chunks": 1,
+  "page_count": 1,
+  "word_count": 66,
+  "insights": {
+    "summary": "The document is a test file for DocuMind, confirming that AI‑generated insights work correctly with the Featherless API. It outlines three key topics—machine‑learning algorithms and neural networks, large‑scale data processing, and cloud‑based distributed computing—and lists the next steps: implement feature‑extraction algorithms, deploy the model to production, and continuously monitor performance metrics.",
+    "key_topics": [
+      "Machine Learning",
+      "Data Processing",
+      "Cloud Computing"
+    ],
+    "entities": {
+      "people": [],
+      "organizations": [],
+      "dates": [],
+      "locations": []
+    },
+    "action_items": [
+      "Implement feature extraction algorithms",
+      "Deploy model to production environment",
+      "Monitor performance metrics continuously"
+    ],
+    "sentiment": "Neutral",
+    "document_stats": {
+      "estimated_reading_time": "< 1 minute",
+      "complexity_score": "High"
+    }
+  }
+}

@@ -1,5 +1,15 @@
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || ''
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+const API_KEY = process.env.NEXT_PUBLIC_AI_KEY || ''
 const UPLOAD_KEY = 'documind_doc_id'
+
+function buildHeaders(extra = {}) {
+  const headers = { ...extra }
+  if (API_KEY) {
+    headers.Authorization = `Bearer ${API_KEY}`
+    headers['x-api-key'] = API_KEY
+  }
+  return headers
+}
 
 async function uploadPdf(file) {
   const fd = new FormData()
@@ -8,6 +18,7 @@ async function uploadPdf(file) {
   const res = await fetch(`${API_BASE}/upload`, {
     method: 'POST',
     body: fd,
+    headers: buildHeaders(),
   })
 
   if (!res.ok) {
@@ -25,6 +36,7 @@ async function queryDoc(doc_id, question) {
   const res = await fetch(`${API_BASE}/query`, {
     method: 'POST',
     body: fd,
+    headers: buildHeaders(),
   })
 
   if (!res.ok) {
@@ -45,7 +57,9 @@ function setStoredDocId(id) {
 }
 
 async function getInsights(doc_id) {
-  const res = await fetch(`${API_BASE}/insights/${doc_id}`)
+  const res = await fetch(`${API_BASE}/insights/${doc_id}`, {
+    headers: buildHeaders(),
+  })
   if (!res.ok) {
     const txt = await res.text()
     throw new Error(txt || 'failed to load insights')

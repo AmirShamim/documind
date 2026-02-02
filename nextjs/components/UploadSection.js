@@ -15,7 +15,7 @@ export default function UploadSection({ docId, setDocId, setError }) {
       setDocId(res.doc_id);
       docService.setStoredDocId(res.doc_id);
     } catch (err) {
-      setError('Error uploading document. Please try again.');
+      setError(err?.message || 'Error uploading document. Please try again.');
     } finally {
       setUploading(false);
     }

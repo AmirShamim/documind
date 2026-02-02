@@ -1,0 +1,30 @@
+{
+  "doc_id": "ad000e70f07445edb755e538c75da07e",
+  "num_chunks": 12,
+  "page_count": 9,
+  "word_count": 1050,
+  "insights": {
+    "summary": "The document outlines a Graphics and Multimedia course covering fundamentals such as 2‑D/3‑D transformations, viewing, curves, hidden‑surface removal, shading, and multimedia elements like audio, video, and animation. It introduces computer graphics as the creation, manipulation, and rendering of geometric objects for display, emphasizing its broad applications—from movies, games, and medical imaging to computer‑aided design—and the technologies (RGB models, lookup tables, graphics devices) that",
+    "key_topics": [
+      "Computer graphics fundamentals (including image processing",
+      "visualization",
+      "graphics devices)",
+      "geometric transformations and viewing pipelines",
+      "shading"
+    ],
+    "entities": {
+      "people": [],
+      "organizations": [],
+      "dates": [],
+      "locations": []
+    },
+    "action_items": [
+      "**Action Items (one per line, or 'None found' if none):**"
+    ],
+    "sentiment": "Positive",
+    "document_stats": {
+      "estimated_reading_time": "5 minutes",
+      "complexity_score": "Medium"
+    }
+  }
+}

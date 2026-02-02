@@ -1,0 +1,30 @@
+{
+  "doc_id": "3d3e24d4ce1f4949b308f1bbf2d5cd3c",
+  "num_chunks": 12,
+  "page_count": 9,
+  "word_count": 1050,
+  "insights": {
+    "summary": "The document outlines a Graphics and Multimedia course covering fundamentals such as scan conversion, 2‑D/3‑D transformations, viewing, curves, hidden‑surface removal, shading, and multimedia elements like audio, video, and animation. It introduces computer graphics as the creation, manipulation, and rendering of geometric objects for display and highlights its major drivers—film, gaming, medical imaging, and computer‑aided design—each shaping the technology’s capabilities and applications.",
+    "key_topics": [
+      "Computer Graphics Fundamentals",
+      "Geometric Transformations & Viewing",
+      "Rendering & Shading Models",
+      "Multimedia (Audio",
+      "Video"
+    ],
+    "entities": {
+      "people": [],
+      "organizations": [],
+      "dates": [],
+      "locations": []
+    },
+    "action_items": [
+      "**Action Items (one per line, or 'None found' if none):**"
+    ],
+    "sentiment": "Positive",
+    "document_stats": {
+      "estimated_reading_time": "5 minutes",
+      "complexity_score": "Medium"
+    }
+  }
+}
